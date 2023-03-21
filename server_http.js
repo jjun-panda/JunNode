@@ -3,7 +3,6 @@ var http = require("http");
 function hello(req, res) {
   if (req.url === "/") {
     res.writeHead(200, { "Content-Type": "text/html;charset=utf-8" });
-
     res.end("<h1>안녕 Nodejs 세계!</h1>");
   }
   if (req.url === "/home") {
