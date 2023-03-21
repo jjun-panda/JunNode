@@ -19,7 +19,7 @@ var designList = [
 // res - response (응답)
 app.get("/", (req, res) => {
   console.dir(req);
-  // view engine 등록해야 사용가능하다.
+  // view engine 등록(app.set)해야 사용 가능하다.
   req.app.render("design_list", { title: "디자인 목록2", designList: designList }, (err, htmlData) => {
     if (err != null) {
       throw err;
@@ -28,8 +28,7 @@ app.get("/", (req, res) => {
   });
 });
 
-// http와 express를 결합하는 형태로 서비스
 const server = http.createServer(app);
 server.listen(app.get("port"), () => {
-  console.log('Sever listening on port ${app.get("port")}');
+  console.log(`Server listening on port ${app.get("port")}`);
 });

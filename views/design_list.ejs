@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko-KR">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,7 +7,7 @@
     <title>Document</title>
   </head>
   <body>
-    <h1><%=title %></h1>
+    <h1><%= title %></h1>
     <div>
       <p>JS템플릿 기술: ejs, pug, musrache, heand1evars, Thymeleaf(Spring boot)</p>
       <p>동적 페이지 구현 (Java Server Page의 JSP와 유사함 - Server의 뷰쪽 기쪽)</p>
@@ -20,14 +20,16 @@
         <th>COMPANY</th>
         <th>YEAR</th>
       </tr>
-      <% // javascript 문법 for(var design of designList) { %>
+
+      <!-- javascript 문법 -->
+      <% for(var design of designList) { %>
       <!-- HTML 영역 -->
       <tr>
-        <rd><%=designList.seq %></rd>
-        <rd><%=designList.name %></rd>
-        <rd><%=designList.price %></rd>
-        <rd><%=designList.company %></rd>
-        <rd><%=designList.year %></rd>
+        <td><%= design.seq %></td>
+        <td><%= design.name %></td>
+        <td><%= design.price %></td>
+        <td><%= design.company %></td>
+        <td><%= design.year %></td>
       </tr>
       <% } %>
     </table>
