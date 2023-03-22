@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="kr-KO">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/main.css" type="text/css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>Todo List</h3>
+    <h1>할 일 수정</h1>
+    <%=item.seq%>
+    <form action="/todo/modify" method="post">
+      <input type="hidden" name="seq" value="<%= item.seq %>" />
+      할 일 : <input type="text" name="todo" value="<%= item.title %>" /><br />
+      사용자 : <input type="text" name="user" value="<%= item.user %>" /><br />
+      DONE :
+      <select name="done" id="">
+        <option value="true" selected="<%= item.done?'selected':'' %>">완료</option>
+        <option value="false" selected="<%= item.done?'':'selected' %>">미완료</option>
+      </select>
+      <input type="submit" value="저장" /> -> 1안<br />
+      <button class="" type="text">저장</button> -> 2안
+    </form>
+  </body>
+</html>

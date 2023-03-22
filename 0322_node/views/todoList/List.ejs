@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="kr-KO">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/main.css" type="text/css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>Todo List</h3>
+    <h1>할 일 목록</h1>
+
+    <% for(var item of todoList) { %>
+    <p><a href="/todo/Detail?seq=<%= item.seq %>"><%= item.seq %>. <%= item.title %></a></p>
+    <!-- //end of for loop -->
+    <% } %>
+    <p><a href="/todo/form">할 일 입력</a></p>
+  </body>
+</html>

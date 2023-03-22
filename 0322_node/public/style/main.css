@@ -1,0 +1,42 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
+@import url("http://www.jjuns-c.com/jjunWeb.css");
+@import url("http://www.jjuns-c.com/jjunColor.css");
+@import url("http://www.jjuns-c.com/jjunFont.css");
+
+html,
+input,
+button {
+  font-size: 16px;
+}
+
+h1 {
+  font-family: "Pretendard";
+  font-size: 3rem;
+  color: var(--main);
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+h3 {
+  font-size: 2rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+h5 {
+  font-size: 1rem;
+}
+h6 {
+  font-size: 0.75rem;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.sebTitle {
+  font-size: 1rem;
+  font-weight: 400;
+}

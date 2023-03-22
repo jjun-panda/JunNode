@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="kr-KO">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/main.css" type="text/css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>Todo List</h3>
+    <h1>코딩이의 홈페이지</h1>
+    <!-- 여기선 HTML 주석으로 한다. -->
+    <!-- // 프로그래밍 공부는 암기 과목에 가깝다. (암기가 우선 - 외워서라도 사용하다보면 이해된다.)
+     // 주석을 자바스크립트 주석으로 한다. 
+     // ejs 에서 console.log()는 서버의 Console 터미널에 표시된다. 
+     // 테스트를 하면서 프로그래밍하세요. (돌 다리도 두리면서 건너라) 
+     // 처음에는 걸음마 - 한줄씩 코딩하고 확인 하기 (감각을 키운다) 
+     // 테스트 주도 개발 (TDD) 
+     // server.js에서 ejs페이지로 전달 한 데이터 확인 
+     //console.log(todoList);  -->
+
+    <% for(var item of todoList) { %>
+    <p><%= item.title %></p>
+    <!-- // end of for loop -->
+    <% } %>
+  </body>
+</html>
