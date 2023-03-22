@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/main.css" type="text/css" />
+    <title>상세 수정 | JJUNS DESIGN</title>
+  </head>
+  <body>
+    <div class="sebTitle">Design Work</div>
+    <h1>상세 수정</h1>
+    <!-- <%= item.seq%> -->
+    <form action="/design/modify" method="post">
+      <input type="hidden" name="seq" value="<%= item.seq %>" />
+      <div>
+        <p>디자인유형</p>
+        <input type="text" name="title" value="<%= item.title %>" />
+      </div>
+      <div>
+        <p>고객사</p>
+        <input type="text" name="client" value="<%= item.client %>" />
+      </div>
+      <div>
+        <p>진행여부</p>
+        <select name="done" id="">
+          <option value="false" selected="<%= item.done?'':'selected' %>">진행중</option>
+          <option value="true" selected="<%= item.done?'selected':'' %>">진행완료</option>
+        </select>
+      </div>
+      <!-- <input type="submit" value="저장" /> -->
+      <button class="savBut" type="text">변경하기</button>
+    </form>
+  </body>
+</html>

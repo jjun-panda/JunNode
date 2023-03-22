@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/main.css" type="text/css" />
+    <title>상세 보기 | JJUNS DESIGN</title>
+  </head>
+  <body>
+    <div class="sebTitle">Design Work</div>
+    <h1>상세 보기</h1>
+    <% console.log(item); %>
+    <table border="1" width="540">
+      <tr>
+        <th>순번</th>
+        <td><%= item.seq; %></td>
+      </tr>
+      <tr>
+        <th>디자인유형</th>
+        <td><%= item.title; %></td>
+      </tr>
+      <tr>
+        <th>고객사</th>
+        <td><%= item.client; %></td>
+      </tr>
+      <tr>
+        <th>진행여부</th>
+        <td><%= item.done; %></td>
+      </tr>
+    </table>
+    <div class="fullBut twoButton">
+      <!-- <button class="backBut" type="text" onclick="history.go(-1)">이전</button> -->
+      <a class="backBut ButtonButton_16x" href="/design">이전</a>
+
+      <div class="rightBtu">
+        <a class="chaBut ButtonButton_16x" href="/design/modify?seq=<%= item.seq %>">수정</a>
+        <a class="delBut ButtonButton_16x" href="/design/delete?seq=<%= item.seq %>">삭제</a>
+      </div>
+    </div>
+  </body>
+</html>

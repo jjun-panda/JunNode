@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/main.css" type="text/css" />
+    <title>디자인 리스트 | JJUNS DESIGN</title>
+  </head>
+  <body>
+    <div class="sebTitle">Design Work</div>
+    <div class="flexTit">
+      <h1>디자인 리스트</h1>
+      <div class="fullBut">
+        <a class="addBut ButtonButton_16x" href="/design/form">디자인 추가</a>
+      </div>
+    </div>
+    <div class="designList">
+      <% for(var item of designList) { %>
+      <p>
+        <a class="BodyText_24x" href="/design/Detail?seq=<%= item.seq %>">
+          <span><%= item.seq %></span>
+          [<%= item.client %>] <%= item.title %></a
+        >
+      </p>
+      <% } %>
+    </div>
+  </body>
+</html>

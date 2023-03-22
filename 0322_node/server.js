@@ -15,7 +15,7 @@ app.use("/", express.static(path.join(__dirname, "public"))); // 절대경로
 app.use(bodyParser.json()); //json data 전송
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Todo List 임시 데이터 배열
+// ---------- Todo List 임시 데이터 배열 ----------
 let todoList = [
   //seq = 시퀸스
   { seq: 101, title: "청소하기", user: "user01", done: false },
@@ -25,7 +25,8 @@ let todoList = [
 ];
 let sequence = 105;
 
-// Todo List forwards
+// ---------- Todo List forwards ------------------------------
+// ---------- 메인(get) ------------------------------
 router.route("/todo").get((req, res) => {
   console.log("GET - /todo");
   // render(파일이름, EJS페이지로 전달될 객체(데이터), EJS에서 처리된 결과)
@@ -35,14 +36,16 @@ router.route("/todo").get((req, res) => {
   });
 });
 
+// ---------- 메인(post) ------------------------------
 router.route("/todo").post((req, res) => {
   console.log("POST - /todo");
   // 정보 입력 후 목록으로 페이지 전환
   res.redirect("/todo");
 });
 
+// ---------- 상세보기 ------------------------------
 router.route("/todo/detail").get((req, res) => {
-  console.log("GET - /todo/detail");
+  console.log("GET - /todo/Detail");
   //   console.log("seq =>", req.query.seq);
   // --- 의사코드(의사코딩) - 한국어로 먼저 코딩한다. 논리적으로
   // --- 요구분석 한 것을 어떻게 구현 할지 논리적으로 정리하는 것
@@ -65,11 +68,9 @@ router.route("/todo/detail").get((req, res) => {
     if (err) throw err;
     res.end(html);
   });
-  //   req.app.render("todoList/Detail", {}, (err, html) => {
-  //     if (err) throw err;
-  //     res.end(html);
-  //   });
 });
+
+// ---------- 폼 양식(get) ------------------------------
 router.route("/todo/form").get((req, res) => {
   console.log("GET - /todo/form");
   req.app.render("todoList/Form", {}, (err, html) => {
@@ -77,11 +78,13 @@ router.route("/todo/form").get((req, res) => {
     res.end(html);
   });
 });
+
+// ---------- 폼 양식(post) ------------------------------
 router.route("/todo/form").post((req, res) => {
   console.log("POST - /todo/form");
   // 중요해요! post로 전달되는 파라미터는 body에 있다. body data는 bodyParser 이용.
   // bodyParser 사용하기 위해서는 미들웨어에 등록 해야 한다.
-  // 1.전잘 된 요청 파라미드를 받아온다.
+  // 1.전달 된 요청 파라미드를 받아온다.
   console.log("req.body >>>", req.body); // 객체를 출력 해 본다.
   let title = req.body.todo;
   let user = req.body.user;
@@ -92,6 +95,7 @@ router.route("/todo/form").post((req, res) => {
   res.redirect("/todo"); // 새로고침(리다이렉트)
 });
 
+// ---------- 수정하기(get) ------------------------------
 router.route("/todo/modify").get((req, res) => {
   console.log("GET - /todo/modify");
   let seq = Number(req.query.seq);
@@ -108,6 +112,7 @@ router.route("/todo/modify").get((req, res) => {
   });
 });
 
+// ---------- 수정하기(post) ------------------------------
 router.route("/todo/modify").post((req, res) => {
   // 1. 파라미터 전송 받기
   var newTodo = req.body;
@@ -132,10 +137,12 @@ router.route("/todo/modify").post((req, res) => {
   // 4. 리다이렉트
   res.redirect("/todo/detail?seq=" + seq);
 });
+
+// ---------- 리스트 삭제 ------------------------------
 router.route("/todo/delete").get((req, res) => {
   console.log("GET - /todo/delete");
   // delete 처리 후 list로 전환된다.
-  // spliice()로 삭제 가능.
+  // 1. spliice()로 삭제 가능.
   let seq = Number(req.query.seq);
   // 2. 수정 할 item 찾기
   let findIdx = -1;
@@ -150,12 +157,12 @@ router.route("/todo/delete").get((req, res) => {
   res.redirect("/todo");
 });
 
-// test design list forwards
-router.route("/deisign").get((req, res) => {
+// test list forwards
+router.route("/").get((req, res) => {
   // 뷰 렌더링 테스트
   // view engine 셋팅 필수
   console.log("GET - / 호출 됨");
-  req.app.render("car/car", {}, (err, html) => {
+  req.app.render("test/test", {}, (err, html) => {
     if (err) throw err;
     res.end(html);
   });
