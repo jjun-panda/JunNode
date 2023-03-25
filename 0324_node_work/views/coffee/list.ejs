@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- <link rel="stylesheet" href="../../style/main.css" type="text/css" /> -->
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>스타벅스 메뉴</h1>
+      </div>
+
+      <table class="table table-hover">
+        <tr>
+          <th>번호</th>
+          <th>메뉴명</th>
+          <th>가격</th>
+          <th>유형</th>
+        </tr>
+
+        <% coffeeList.forEach(function (item, index, arr) { %>
+        <tr>
+          <td><span><%= item.seq %></span></td>
+          <td><a href="/coffee/modify/<%= item.seq %>"><%= item.nameKr %> | <%= item.nameEg %></a></td>
+          <td><%= item.price %></td>
+          <td><%= item.typeCoffee %></td>
+        </tr>
+        <% }); %>
+      </table>
+      <a class="btn btn-outline-danger" href="/coffee/input.html">등록</a>
+    </div>
+  </body>
+</html>

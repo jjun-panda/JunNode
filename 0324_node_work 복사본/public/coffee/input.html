@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="../style/main.css" type="text/css" /> -->
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>재고 입력</h1>
+    <hr />
+    <form action="/coffee/input" method="post" class="inputTable">
+      <table>
+        <tr>
+          <th>메뉴명</th>
+          <td><input type="text" name="nameKr" placeholder="입력해주세요" /></td>
+        </tr>
+        <tr>
+          <th>영문명</th>
+          <td><input type="text" name="nameEg" placeholder="입력해주세요" /></td>
+        </tr>
+        <tr>
+          <th>금액</th>
+          <td><input type="text" name="price" placeholder="입력해주세요" /></td>
+        </tr>
+        <tr>
+          <th>유형</th>
+          <td>
+            <!-- <label name="typeCoffee" for="typeCoffee" type="hidden"></label>
+            <select name="typeCoffee" onchange="selChange(this)">
+              <option value="hot">hot</option>
+              <option value="ice">ice</option>
+              <option value="hot/ice">hot/ice</option>
+            </select>
+            <span id="typeCoffee" style="display: none"></span> -->
+            <input type="checkbox" name="typeCoffee" value="Hot" /> Hot <input type="checkbox" name="typeCoffee" value="Ice" /> Ice
+          </td>
+        </tr>
+      </table>
+      <button type="submit">저장</button>
+    </form>
+  </body>
+  <!-- <script>
+    function selChange(e) {
+      // 선택된 데이터 가져오기
+      const value = e.value;
+      // 데이터 출력
+      document.getElementById("typeCoffee").innerText = value;
+    }
+  </script> -->
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="../../style/main.css" type="text/css" /> -->
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>상세보기 및 수정</h1>
+      <hr />
+      <form action="/coffee/modify" method="post">
+        <input type="hidden" name="seq" value="<%= coffee.seq %>" />
+        <table>
+          <tr>
+            <th>번호</th>
+            <td><input type="text" value="<%= coffee.seq %>" disabled /></td>
+          </tr>
+          <tr>
+            <th>메뉴명</th>
+            <td><input type="text" name="nameKr" value="<%= coffee.nameKr %>" /></td>
+          </tr>
+          <tr>
+            <th>영문명</th>
+            <td><input type="text" name="nameEg" value="<%= coffee.nameEg %>" /></td>
+          </tr>
+          <tr>
+            <th>금액</th>
+            <td><input type="text" name="price" value="<%= coffee.price %>" /></td>
+          </tr>
+          <tr>
+            <th>유형</th>
+            <td><input type="checkbox" name="typeCoffee" value="Hot" checked="checked" /><label>Hot</label> <input type="checkbox" name="typeCoffee" value="Ice" /><label>Ice</label></td>
+          </tr>
+          <div class="fullBut" style="align-items: center">
+            <button class="savBut" type="submit" value="수정">수정</button>
+            <button class="delBut" type="button" value="삭제" onclick="window.location.href='/coffee/delete/<%= coffee.seq %>';">삭제</button>
+          </div>
+        </table>
+      </form>
+      <script>
+        if (Hot === coffee.price) {
+        }
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../style/main.css" type="text/css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>상세보기 및 수정</h1>
+      <form action="/car/modify" method="post">
+        <!-- 애는 숨기는중 -->
+        <input type="hidden" name="seq" value="<%= car.seq %>" />
+        <table>
+          <tr>
+            <th>번호</th>
+            <td><input type="text" value="<%= car.seq %>" disabled /></td>
+          </tr>
+          <tr>
+            <th>차종명</th>
+            <td><input type="text" name="name" value="<%= car.name %>" /></td>
+          </tr>
+          <tr>
+            <th>금액</th>
+            <td><input type="text" name="price" value="<%= car.price %>" /></td>
+          </tr>
+          <tr>
+            <th>회사명</th>
+            <td><input type="text" name="nameEg" value="<%= car.nameEg %>" /></td>
+          </tr>
+          <tr>
+            <th>출시년도</th>
+            <td><input type="text" name="typeCoffer" value="<%= car.typeCoffer %>" /></td>
+          </tr>
+          <div class="fullBut" style="align-items: center">
+            <button class="savBut" type="submit" value="수정">수정</button>
+            <button class="delBut" type="button" value="삭제좀!!!!!!!!!!!!" onclick="window.location.href='/car/delete/<%= car.seq %>';">삭제</button>
+
+            <!-- <input class="savBut" type="submit" value="수정" /> -->
+            <!-- <button class="delBut" type="submit" onclick="location='www.jjuns-c.com';">내 링크</button>
+            <button class="delBut" type="submit" onclick="location='/car/delete/<%= car.seq %>';">내 링크</button>
+            <button class="delBut" type="submit" onclick="window.open='/car/delete/<%= car.seq %>';">삭제(win-)</button>
+            <input class="delBut" type="submit" href="/car/delete/<%= car.seq %>" name="삭제(intput)">
+            <button class="delBut" type="submit" onclick="location.href='#/car/delete/<%= car.seq %>';">삭제(locat-)</button> -->
+
+            <!-- <a class="delBut" href='/car/delete/<%= car.seq %>'>삭제</a>
+            <button class="delBut"><a href='/car/delete/<%= car.seq %>'>삭제좀 해줘....!</a></button> -->
+          </div>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>

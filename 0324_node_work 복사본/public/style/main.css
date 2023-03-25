@@ -1,0 +1,356 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
+@import url("http://www.jjuns-c.com/jjunWeb.css");
+@import url("http://www.jjuns-c.com/jjunColor.css");
+@import url("http://www.jjuns-c.com/jjunFont.css");
+
+:root {
+  --black: #000;
+  --warm-neutral: #f2f0eb;
+  --cool-nwutral: #f9f9f9;
+  --white: #fff;
+  --starbucks-green: #0a6242;
+  --accent-green: #0d744b;
+  --light-green: #d5e9e2;
+  --house-green: #1f3932;
+}
+
+html,
+input,
+button {
+  font-size: 16px;
+}
+
+h1 {
+  font-family: Pretendard;
+  font-size: 48px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: var(--starbucks-green);
+  padding: 24px 24px 8px;
+}
+
+p {
+  font-family: Pretendard;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: normal;
+}
+
+::selection {
+  background: var(--starbucks-green);
+  color: #fff;
+}
+
+body {
+  max-width: 800px;
+  width: 100%;
+  margin: auto;
+  border: 2px solid var(--starbucks-green);
+  margin-top: 20px;
+  padding-bottom: 24px;
+  box-shadow: 8px 8px var(--starbucks-green);
+  min-height: 360px;
+}
+.sebTitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--white);
+  background: var(--starbucks-green);
+  padding: 16px 24px;
+}
+
+table {
+  margin-left: 24px;
+  margin-top: 16px;
+}
+
+tr {
+  /* height: 48px;
+  display: flex;
+  align-items: center; */
+  /* border-top: 1px solid var(--line-strong); */
+}
+
+/* tr:first-child {
+  background-color: var(--light-green);
+} */
+tr:last-child {
+  margin-bottom: 0;
+}
+tr > th {
+  width: 160px;
+  text-align: left;
+  padding-left: 20px;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-weight: 700;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: normal;
+}
+/* tr > th:first-child {
+  width: 100px;
+} */
+
+tr > td {
+  padding-left: 16px;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: normal;
+}
+
+.fullBut {
+  display: flex;
+  margin: 24px 32px;
+  gap: 8px;
+  justify-content: flex-end;
+}
+.chaBut {
+  padding: 0 32px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  background-color: var(--starbucks-green);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.delBut {
+  padding: 0 32px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  background-color: var(--white);
+  color: var(--starbucks-green);
+  text-decoration: none;
+  border-radius: 8px;
+  border: 1px solid var(--starbucks-green);
+  box-sizing: border-box;
+}
+
+.chaBut:hover {
+  background-color: var(--primary-strong);
+  color: var(--white);
+}
+
+.delBut:hover {
+  background-color: var(--interaction-primary-hover);
+  color: var(--starbucks-green);
+  border: 1px solid var(--starbucks-green);
+}
+
+.designList {
+  /* padding: 0 24px 24px; */
+}
+.designList a {
+  font-family: var(--font);
+  font-weight: 500;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  /* width: 100%; */
+  padding: 0 16px;
+  text-decoration: none;
+  color: var(--text-normal);
+  transition: 0.5s ease;
+  gap: 8px;
+}
+
+.designList a:hover {
+  background-color: var(--interaction-primary-hover);
+  color: var(--starbucks-green);
+}
+
+.designList a > span {
+  width: 40px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: var(--starbucks-green);
+  color: var(--white);
+}
+
+.addBut {
+  padding: 0 32px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  background-color: var(--fill-alternative);
+  color: var(--text-normal);
+  text-decoration: none;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: 0.3s ease;
+}
+.addBut:hover {
+  background-color: var(--status-warning);
+  color: var(--primary-strong);
+  text-decoration: none;
+}
+.flexTit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+input {
+  height: 32px;
+  border-radius: 8px;
+  background-color: var(--fill-primary);
+  border: 0;
+  padding: 8px 16px;
+  /* max-width: 280px; */
+  width: 100%;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+}
+
+form {
+  padding: 24px;
+  width: 400px;
+  margin: auto;
+}
+form > div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+form > div > p {
+  padding-right: 8px;
+  font-family: Pretendard;
+  font-size: 20px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  max-width: 108px;
+  width: 100%;
+}
+
+.savBut {
+  /* margin-top: 24px; */
+  padding: 0 32px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  background-color: var(--starbucks-green);
+  color: var(--white);
+  text-decoration: none;
+  width: 320px;
+  border-radius: 8px;
+  text-align: center;
+  justify-content: center;
+  border: 0;
+  /* margin: 64px auto 0; */
+}
+.savBut:hover {
+  background-color: var(--primary-strong);
+  color: var(--white);
+}
+
+select {
+  height: 48px;
+  border-radius: 8px;
+  background-color: var(--fill-primary);
+  border: 0;
+  padding: 8px 16px;
+  min-width: 280px;
+  width: 100%;
+  /* margin: 0 20px; */
+  -o-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url(http://jjuns-c.com/ico_arrow_down.svg);
+  background-position: 95% 50%;
+  background-repeat: no-repeat;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+}
+.main p {
+  font-family: Pretendard;
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.75;
+  letter-spacing: normal;
+}
+.main strong {
+  background-color: var(--light-green);
+  padding: 2px 8px;
+  border-radius: 4px;
+  color: var(--starbucks-green);
+}
+
+.backBut {
+  padding: 0 32px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  background-color: var(--fill-primary);
+  color: var(--text-alternative);
+  text-decoration: none;
+  border-radius: 8px;
+  text-align: center;
+  justify-content: center;
+  border: 0;
+}
+.backBut:hover {
+  background-color: var(--light-green);
+  color: var(--starbucks-green);
+}
+
+.twoButton {
+  justify-content: space-between;
+}
+.rightBtu {
+  display: flex;
+  gap: 8px;
+}
+.listTite {
+  padding: 24px 24px 8px;
+}
+
+.listTite h1 {
+  padding: 0;
+}
+
+.listTite p {
+  font-size: 24px;
+}
+
+/* input.html */
+.inputTable {
+  width: 600px;
+}
+.inputTable table {
+  margin: 16px 0 0 0;
+}
+.inputTable tr:first-child {
+  background-color: var(--white);
+}

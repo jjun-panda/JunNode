@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="../../style/main.css" type="text/css" /> -->
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="listTite">
+      <h1>스타벅스 메뉴</h1>
+      <!-- <p>무엇이든 팔아 드립니다!</p> -->
+    </div>
+    <hr />
+
+    <div class="fullBut">
+      <a class="addBut ButtonButton_16x" href="/coffee/input.html">등록</a>
+    </div>
+    <hr />
+
+    <table class="designList">
+      <tr>
+        <th>번호</th>
+        <th>메뉴명</th>
+        <th>가격</th>
+        <th>유형</th>
+      </tr>
+      <% coffeeList.forEach(function (item, index, arr) { %>
+      <tr>
+        <th><span><%= item.seq %></span></th>
+        <th><a href="/coffee/modify/<%= item.seq %>"><%= item.nameKr %> | <%= item.nameEg %></a></th>
+        <th><%= item.price %></th>
+        <th><%= item.typeCoffee %></th>
+      </tr>
+      <% }); %>
+    </table>
+  </body>
+</html>

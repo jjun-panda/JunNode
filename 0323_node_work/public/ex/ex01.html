@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #box {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        border: 1px solid black;
+        left: 0;
+        transition: left 0.5s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+      }
+      mytag {
+        color: red;
+      }
+    </style>
+    <script>
+      class MyTag extends HTMLDivElement {
+        constructor(txt) {
+          super(txt);
+        }
+      }
+
+      window.onload = function () {
+        var playBtn = document.querySelector("#playBtn");
+        var box = document.querySelector("#box");
+
+        var myTag = document.createElement("MyTag");
+        myTag.innerHTML = "나의 태그";
+        document.body.appendChild(myTag);
+        playBtn.onclick = function () {
+          box.style.backgroundColor = "green";
+          box.style.left = "400px";
+        };
+      };
+      //   function main() {
+      //     var playBtn = document.querySelector("#playBtn");
+      //     console.log(playBtn);
+      //   }
+      //   window.addEventListener("load", main);
+    </script>
+  </head>
+  <body>
+    <h1>콜백 함수 연습</h1>
+    <button id="playBtn">play</button>
+    <div id="box">box</div>
+    <mytag>ㅋㅋㅋㅋㅋㅋㅋㅋ</mytag>
+  </body>
+</html>

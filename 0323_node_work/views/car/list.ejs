@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../style/main.css" type="text/css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="flexTit">
+      <div class="listTite">
+        <h1>중고 자동차 목록</h1>
+        <p>무엇이든 팔아 드립니다!</p>
+      </div>
+      <div class="fullBut">
+        <a class="addBut ButtonButton_16x" href="/car/input.html">등록</a>
+      </div>
+    </div>
+    <table class="designList">
+      <tr>
+        <th>SEQ</th>
+        <th>NAME</th>
+        <th>PRICE</th>
+        <th>nameEg</th>
+        <th>typeCoffer</th>
+      </tr>
+      <% carList.forEach(function (item, index, arr) { %>
+      <tr>
+        <th><span><%= item.seq %></span></th>
+        <th><a href="/car/modify/<%= item.seq %>"><%= item.name %></a></th>
+        <th><%= item.price %></th>
+        <th><%= item.nameEg %></th>
+        <th><%= item.typeCoffer %></th>
+      </tr>
+      <% }); %>
+    </table>
+  </body>
+</html>
