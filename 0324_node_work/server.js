@@ -6,10 +6,10 @@ const server = http.createServer(app);
 const router = express.Router();
 
 const coffeeList = [
-  { seq: 01, nameKr: "아이스 카페 아메리카노", nameEg: "Iced Caffe Americano", price: 4500, typeCoffee: "hot" },
-  { seq: 02, nameKr: "카페 아메리카노", nameEg: "Caffe Americano", price: 4500, typeCoffee: "hot/ice" },
-  { seq: 03, nameKr: "봄 딸기 라떼", nameEg: "Spring Strawberry Milk", price: 6900, typeCoffee: "hot/ice" },
-  { seq: 04, nameKr: "카페 라떼", nameEg: "Caffe Latte", price: 5000, typeCoffee: "hot/ice" },
+  { seq: 01, nameKr: "아이스 카페 아메리카노", nameEg: "Iced Caffe Americano", price: 4500, typeCoffee: "Ice" },
+  { seq: 02, nameKr: "카페 아메리카노", nameEg: "Caffe Americano", price: 4500, typeCoffee: "Hot,Ice" },
+  { seq: 03, nameKr: "봄 딸기 라떼", nameEg: "Spring Strawberry Milk", price: 6900, typeCoffee: "Ice" },
+  { seq: 04, nameKr: "콜드 브루", nameEg: "Cold Brew", price: 4900, typeCoffee: "Ice" },
 ];
 let sequence = 05;
 
@@ -32,9 +32,9 @@ router.route("/coffee/list").get((req, res) => {
 // ---------- 상세보기 ------------------------------
 router.route("/coffee/input").post((req, res) => {
   // console.log("req.body >>>", req.body);
-  var newCoffer = req.body;
-  newCoffer.seq = sequence++;
-  coffeeList.push(newCoffer);
+  var newCoffee = req.body;
+  newCoffee.seq = sequence++;
+  coffeeList.push(newCoffee);
   res.redirect("/coffee/list");
 });
 
@@ -58,13 +58,13 @@ router.route("/coffee/modify/:seq").get((req, res) => {
 router.route("/coffee/modify").post((req, res) => {
   console.log("req.body >>>", req.body);
 
-  var modifyCoffer = req.body;
-  var seq = modifyCoffer.seq;
+  var modifyCoffee = req.body;
+  var seq = modifyCoffee.seq;
   var idx = coffeeList.findIndex(function (coffeeItem) {
     return coffeeItem.seq == seq;
   });
   if (idx != -1) {
-    coffeeList[idx] = modifyCoffer;
+    coffeeList[idx] = modifyCoffee;
   }
   res.redirect("/coffee/list");
 });
